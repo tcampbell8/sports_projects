@@ -1,3 +1,4 @@
+#Aggregating data for NFL week 1 2015
 
 nfl_week1 <- read.csv(file.choose())
 nfl_week1 <- nfl_week1[-c(4)]
