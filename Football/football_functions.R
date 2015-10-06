@@ -1,3 +1,5 @@
+#random sampling for fantasy football teams using aggregated week 1 data
+
 week1 <- read.csv("nfl_week1_DATA.csv")
 names(week1)[1] <- "Index"
 rbs = subset(week1, week1$Position =="RB", 1:11)
