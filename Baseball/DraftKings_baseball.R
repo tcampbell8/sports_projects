@@ -1,6 +1,4 @@
-#Optimize draftKings baseball
-
-
+#Random sampling of draftKings baseball teams
 
 
 #Download CSV from DraftKings and read it in to "baseball"
