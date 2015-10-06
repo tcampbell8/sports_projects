@@ -5,9 +5,9 @@ date: "September 1, 2015"
 output: pdf_document
 ---
 
-Three test models for the upcoming Deutche Championship. 
+Three test models for projecting fantasy points for the upcoming Deutche Championship. 
 
-#Proportions
+#Weights of Golf Stats
 
 
 **MODEL | points | fedex | drive_dist | drive_acc | scramble | GIR**\newline
@@ -16,9 +16,9 @@ Ty1| 10 | 7.5| 30 | 15 | 7.5| 30\newline
 Nas| 30 | 10 | 5  | 15 | 15 | 25\newline
 
 #Rankings
-```{r set-options, echo=FALSE}
+```{r ,set-options, echo=FALSE, comment=NA}
 options(width = 120)
-setwd("~/Documents")
+setwd("~/Documents/golf_projects")
 golf = read.csv("DKSalaries(5).csv")
 golf <- golf[c(2,3,5)]
 fedex <- read.csv("deutche_champ_fedexPoints.csv")
