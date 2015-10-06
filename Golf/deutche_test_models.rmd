@@ -1,5 +1,23 @@
-#Aggregating data for Deutche Championship
+---
+title: "Deutche Championship Test Models"
+author: "Tate Campbell"
+date: "September 1, 2015"
+output: pdf_document
+---
 
+Three test models for the upcoming Deutche Championship. 
+
+#Proportions
+
+
+**MODEL | points | fedex | drive_dist | drive_acc | scramble | GIR**\newline
+<br>T1 | 40 | 10 | 10 | 10 | 10 | 20\newline
+Ty1| 10 | 7.5| 30 | 15 | 7.5| 30\newline 
+Nas| 30 | 10 | 5  | 15 | 15 | 25\newline
+
+#Rankings
+```{r set-options, echo=FALSE}
+options(width = 120)
 setwd("~/Documents")
 golf = read.csv("DKSalaries(5).csv")
 golf <- golf[c(2,3,5)]
@@ -66,8 +84,6 @@ golf <- golf[-c(3,48),]
 golf <- golf[-c(8)]
 golf$avg_drive_dist[25] <- mean(golf$avg_drive_dist, na.rm=TRUE)
 
-#3 unique metrics based on differing weights for golf stats (See RMD file for more info)
-
 for (i in 1:97){
   S <- 0.4*golf$AvgPointsPerGame[i]/max(golf$AvgPointsPerGame)
   S <- S + 0.1*golf$fedex[i]/max(golf$fedex)
@@ -96,7 +112,6 @@ for (i in 1:97){
   golf$T3[i] <- S*100
 }
 
-names(golf)
 g1 = golf[order(-golf$T1),]
 
 g2 = golf[order(-golf$T2),]
@@ -104,27 +119,8 @@ g2 = golf[order(-golf$T2),]
 g3 = golf[order(-golf$T3),]
 
 test_models <- cbind.data.frame(golf[1], g1[1], g2[1], g3[1])
-names(test_models) <- c("Original", "T1", "Ty1", "Nas1")
-
-
-random_golf_team <- function(){
-  repeat{
-    nums <- sample(1:97, 6, replace = FALSE)
-    team <- golf[nums[1],]
-    for (i in 2:6){
-      team <- rbind.data.frame(team, golf[nums[i],])
-    }
-    if (sum(team$Salary)<=50000)
-      break
-  }
-  return(team)
-}
-
-
-
-random_golf_team()
-
-
-
+names(test_models) <- c("Original", "T1", "Ty1", "Nas")
+test_models
+```
 
 

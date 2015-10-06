@@ -1,4 +1,4 @@
-#Golf Functions
+#Golf Functions for random sampling to generate fantasy golf teams 
 
 golf_rec <- read.csv(file.choose())
 golf <- golf_rec[-c(1,4,6)]
@@ -54,10 +54,11 @@ gen_golf_teams <- function(trials){
 head(gen_golf_teams(25000))
 
 golf_new <- golf
-# golf_new$ExpectedValue <- golf_new$AvgPointsPerGame*golf_new$pct_cuts_made + 
-#   (golf_new$AvgPointsPerGame/2)*(1 - golf_new$pct_cuts_made)
 
-#doesn't really make sense to compute EV since avgPoints already accounts for cuts missed
+#A new metric akin to Expected Value using Average Fantasy Points and Percentage of cuts made
+golf_new$ExpectedValue <- golf_new$AvgPointsPerGame*golf_new$pct_cuts_made + 
+  (golf_new$AvgPointsPerGame/2)*(1 - golf_new$pct_cuts_made)
+
 
 
 
