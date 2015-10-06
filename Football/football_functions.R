@@ -1,12 +1,13 @@
 #random sampling for fantasy football teams using aggregated week 1 data
 
-week1 <- read.csv("nfl_week1_DATA.csv")
-names(week1)[1] <- "Index"
-rbs = subset(week1, week1$Position =="RB", 1:11)
-dst = subset(week1, Position =="DST", 1:11)
-qbs = subset(week1, Position =="QB", 1:11)
-tes = subset(week1, Position =="TE", 1:11)
-wrs = subset(week1, Position =="WR", 1:11)
+week1 <- read.csv(file.choose())
+week1$Index <- 1:length(week1$Name)
+#names(week1)[6] <- "Index"
+rbs = subset(week1, week1$Position =="RB", 1:7)
+dst = subset(week1, Position =="DST", 1:7)
+qbs = subset(week1, Position =="QB", 1:7)
+tes = subset(week1, Position =="TE", 1:7)
+wrs = subset(week1, Position =="WR", 1:7)
 
 n_rbs <- length(rbs[,1])
 n_dst <- length(dst[,1])
@@ -47,9 +48,15 @@ gen_football_teams <- function(trials){
   team_indices <- cbind.data.frame(team_indices, team_points)
   team_indices$Trial <- 1:length(team_indices[,1])
   names(team_indices) <- c("QB", "RB1", "RB2", "RB3", "WR1", "WR2", "WR3", "TE", "DST", "TeamPoints", "Trial")
-  return(team_indices[order(-team_points),])
+  df <- team_indices[order(-team_points),]
+  for (j in 1:100){
+    for (k in 1:9){
+      value <- df[j,k]
+      df[j,k] <- as.character(week1$Name[as.integer(value)])
+      #print(week1$Name[as.integer(value)])
+    }
+  }
+  return(df)
 }
 
-
-
-numfire <- read.csv(file.choose())
+head(gen_football_teams(1000))
