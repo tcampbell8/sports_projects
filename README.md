@@ -1,3 +1,3 @@
 # sports_projects
 
-A few random sampling methods I've developed for generating fantasy teams on DraftKings
+A few sports projects and some data that I've worked on recently
