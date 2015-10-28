@@ -1,0 +1,29 @@
+Defenses ,Team,Opp. ,Points,Salary
+Miami Defense,mia,@ ten,24,2800.00
+New Orleans Defense,nor,v. atl,19,2300.00
+Philadelphia Defense,phi,v. nyg,19,2900.00
+Denver Defense,den,@ cle,17,3700.00
+Houston Defense,hou,@ jac,16,3000.00
+Cleveland Defense,cle,v. den,13,2200.00
+Washington Defense,was,@ nyj,13,2500.00
+Pittsburgh Defense,pit,v. ari,11,2700.00
+New York G Defense,nyg,@ phi,9,2900.00
+Indianapolis Defense,ind,v. nwe,9,2500.00
+Minnesota Defense,min,v. kan,8,2900.00
+Kansas City Defense,kan,@ min,7,2800.00
+Seattle Defense,sea,v. car,7,3800.00
+New York J Defense,nyj,v. was,6,3100.00
+Green Bay Defense,gnb,v. sdg,6,3200.00
+San Francisco Defense,sfo,v. bal,5,2100.00
+New England Defense,nwe,@ ind,5,3100.00
+Tennessee Defense,ten,v. mia,5,2900.00
+Cincinnati Defense,cin,@ buf,4,3000.00
+Carolina Defense,car,@ sea,4,3000.00
+Chicago Defense,chi,@ det,4,2400.00
+Baltimore Defense,bal,@ sfo,3,3400.00
+San Diego Defense,sdg,@ gnb,3,2600.00
+Detroit Defense,det,v. chi,2,2500.00
+Jacksonville Defense,jac,v. hou,1,2700.00
+Arizona Defense,ari,@ pit,1,3600.00
+Atlanta Defense,atl,@ nor,0,3200.00
+Buffalo Defense,buf,v. cin,-1,3200.00
