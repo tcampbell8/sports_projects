@@ -47,17 +47,19 @@ impact <- function(pos){
     
     df$avg_impact[i] <- mean(c(df$w1[i],df$w2[i],df$w3[i],df$w4[i],df$w5[i]), na.rm = TRUE)
     df$sd_impact[i] <- sd(c(df$w1[i],df$w2[i],df$w3[i],df$w4[i],df$w5[i]), na.rm = TRUE)
-    df$LB_impact[i] <- df$avg_impact[i] - 1.645*df$sd_impact[i]
-    df$UB_impact[i] <- df$avg_impact[i] + 1.645*df$sd_impact[i]
+    df$LB_impact[i] <- df$avg_impact[i] - 1.533206*df$sd_impact[i]
+    df$UB_impact[i] <- df$avg_impact[i] + 1.533206*df$sd_impact[i]
     df$N[i] <- c
   }
   df <- data.frame(df)
-  #df <- data.frame(df$player, df$avg_impact, df$sd_impact, df$LB_impact, df$UB_impact, df$N)
   df <- df[order(-df$LB_impact),]
   return(df[c("player", "avg_impact", "sd_impact", "LB_impact", "UB_impact", "N")])
 }
 
 impact("QB")
-
+impact("RB")
+impact("WR")
+impact("TE")
+impact("DST")
 
 
